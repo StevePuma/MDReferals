@@ -1,0 +1,273 @@
+{
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    },
+    "dashboardid": "5a4cfec4573f08513c0426bf",
+    "datasource": {
+        "address": "LocalHost",
+        "database": "aMedicalXwAaReferrals",
+        "fullname": "localhost/Medical_Referrals",
+        "id": "localhost_aMedicalXwAaReferrals",
+        "live": false,
+        "title": "Medical_Referrals"
+    },
+    "desc": null,
+    "drillToDashboardConfig": {
+        "dashboardIds": [
+        ],
+        "displayDashboardsPane": true,
+        "displayFilterPane": true,
+        "displayHeaderRow": true,
+        "displayToolbarRow": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drilledDashboardDisplayType": 2,
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "excludeFilterDims": [
+        ],
+        "hideDrilledDashboards": true,
+        "includeFilterDims": [
+        ],
+        "modalWindowResize": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "showFolderNameOnMenuSelection": false,
+        "showJTDIcon": true,
+        "volatile": false
+    },
+    "metadata": {
+        "ignore": {
+            "all": false,
+            "dimensions": [
+            ],
+            "ids": [
+            ]
+        },
+        "panels": [
+            {
+                "items": [
+                    {
+                        "jaql": {
+                            "column": "Category",
+                            "datatype": "text",
+                            "dim": "[DIM_Procedure.Category]",
+                            "merged": true,
+                            "table": "DIM_Procedure",
+                            "title": "Category"
+                        }
+                    }
+                ],
+                "name": "x-axis"
+            },
+            {
+                "items": [
+                    {
+                        "jaql": {
+                            "column": "Clinic Name",
+                            "datatype": "text",
+                            "dim": "[Clinic Name]",
+                            "merged": true,
+                            "table": "DIM_Referrals",
+                            "title": "Clinic Name"
+                        }
+                    }
+                ],
+                "name": "y-axis"
+            },
+            {
+                "items": [
+                ],
+                "name": "point"
+            },
+            {
+                "items": [
+                    {
+                        "format": {
+                            "color": {
+                                "max": "#6eda55",
+                                "maxValueValid": true,
+                                "maxvalue": null,
+                                "midValueValid": true,
+                                "midvalue": null,
+                                "min": "#fc7570",
+                                "minValueValid": true,
+                                "minvalue": null,
+                                "rangeMode": "both",
+                                "steps": 9,
+                                "type": "range"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": true,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "jaql": {
+                            "agg": "countduplicates",
+                            "column": "Visit ID",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Visit ID]",
+                            "table": "Fact_Visits",
+                            "title": "# of Visits"
+                        }
+                    }
+                ],
+                "name": "Break By / Color"
+            },
+            {
+                "items": [
+                    {
+                        "format": {
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": true,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "currency": {
+                                    "position": "pre",
+                                    "symbol": "$"
+                                },
+                                "decimals": "auto"
+                            }
+                        },
+                        "jaql": {
+                            "agg": "avg",
+                            "column": "Charge",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Charge]",
+                            "table": "Fact_Visits",
+                            "title": "Average Charge"
+                        }
+                    }
+                ],
+                "name": "size"
+            },
+            {
+                "items": [
+                ],
+                "name": "filters"
+            }
+        ]
+    },
+    "oid": "5a56755be717c84d580bd513",
+    "options": {
+        "autoUpdateOnEveryChange": true,
+        "dashboardFiltersMode": "select",
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+            "max": 4,
+            "min": 0
+        },
+        "selector": true,
+        "selectorLocked": false,
+        "triggersDomready": true
+    },
+    "style": {
+        "dataLimits": {
+            "categoriesCapacityX": 500,
+            "categoriesCapacityY": 500,
+            "seriesCapacity": 50
+        },
+        "legend": {
+            "enabled": false,
+            "position": "bottom"
+        },
+        "markerSize": {
+            "defaultSize": 10,
+            "highest": 60,
+            "isRange": true,
+            "lowest": 10,
+            "max": 48,
+            "min": 12,
+            "step": 1
+        },
+        "narration": {
+            "aggregation": "sum",
+            "display": "above",
+            "enabled": false,
+            "format": "bullets",
+            "labels": [
+                {
+                    "id": "category",
+                    "plural": "Category",
+                    "singular": "Category",
+                    "title": "Category"
+                },
+                {
+                    "id": "clinic_name",
+                    "plural": "Clinic Name",
+                    "singular": "Clinic Name",
+                    "title": "Clinic Name"
+                }
+            ],
+            "up_sentiment": "good",
+            "verbosity": "medium"
+        },
+        "seriesLabels": {
+            "enabled": false,
+            "rotation": 0
+        },
+        "title": {
+            "fontColorEnabled": true,
+            "fontFamilyEnabled": false,
+            "fontTitleBackgroundEnabled": true,
+            "titleAlign": "center",
+            "titleBackground": "#004d4d",
+            "titleFontColor": "white",
+            "titleMenuEnabled": true
+        },
+        "xAxis": {
+            "enabled": true,
+            "gridLines": true,
+            "hideMinMax": true,
+            "isIntervalEnabled": false,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "logarithmic": false,
+            "logarithmicOld": false,
+            "ticks": true,
+            "title": {
+                "enabled": false
+            }
+        },
+        "yAxis": {
+            "enabled": true,
+            "gridLines": true,
+            "hideMinMax": true,
+            "isIntervalEnabled": false,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "logarithmic": false,
+            "logarithmicOld": false,
+            "ticks": true,
+            "title": {
+                "enabled": false
+            }
+        }
+    },
+    "subtype": "bubble/scatter",
+    "title": "# Referrals and Total Charge by Clinic",
+    "type": "chart/scatter"
+}

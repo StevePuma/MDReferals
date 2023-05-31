@@ -1,0 +1,260 @@
+{
+    "defaultFilters": [
+        {
+            "disabled": false,
+            "instanceid": "5C2F4-DA20-9D",
+            "isCascading": false,
+            "jaql": {
+                "collapsed": false,
+                "column": "Date",
+                "datasource": {
+                    "address": "LocalHost",
+                    "database": "aMedicalXwAaReferrals",
+                    "fullname": "localhost/Medical_Referrals",
+                    "id": "localhost_aMedicalXwAaReferrals",
+                    "live": false,
+                    "title": "Medical_Referrals"
+                },
+                "datatype": "datetime",
+                "dim": "[DIM_Dates.Date (Calendar)]",
+                "filter": {
+                    "explicit": true,
+                    "members": [
+                        "2016-01-01T00:00:00"
+                    ],
+                    "multiSelection": false,
+                    "userMultiSelect": false
+                },
+                "level": "years",
+                "merged": true,
+                "table": "DIM_Dates",
+                "title": "Years in Date"
+            }
+        },
+        {
+            "disabled": false,
+            "instanceid": "72086-C420-3D",
+            "isCascading": true,
+            "levels": [
+                {
+                    "collapsed": true,
+                    "column": "Category",
+                    "datasource": {
+                        "address": "LocalHost",
+                        "database": "aMedicalXwAaReferrals",
+                        "fullname": "localhost/Medical_Referrals",
+                        "id": "localhost_aMedicalXwAaReferrals",
+                        "live": false,
+                        "title": "Medical_Referrals"
+                    },
+                    "datatype": "text",
+                    "dim": "[DIM_Procedure.Category]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "merged": true,
+                    "panel": "scope",
+                    "table": "DIM_Procedure",
+                    "title": "Category"
+                },
+                {
+                    "collapsed": true,
+                    "column": "Procedure",
+                    "datatype": "text",
+                    "dim": "[DIM_Procedure.Procedure]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "merged": true,
+                    "table": "DIM_Procedure",
+                    "title": "Procedure"
+                }
+            ],
+            "model": {
+                "__store": [
+                    "[DIM_Procedure.Category]",
+                    "[DIM_Procedure.Procedure]"
+                ],
+                "instanceid": "A9C80-F001-05"
+            }
+        },
+        {
+            "disabled": false,
+            "instanceid": "0BB3A-B0BA-0B",
+            "isCascading": true,
+            "levels": [
+                {
+                    "collapsed": true,
+                    "column": "Clinic Name",
+                    "datatype": "text",
+                    "dim": "[Clinic Name]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "merged": true,
+                    "panel": "scope",
+                    "table": "DIM_Referrals",
+                    "title": "Clinic Name"
+                },
+                {
+                    "collapsed": true,
+                    "column": "Speciality",
+                    "datatype": "text",
+                    "dim": "[Speciality]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "merged": true,
+                    "table": "DIM_Referrals",
+                    "title": "Speciality"
+                }
+            ],
+            "model": {
+                "__store": [
+                    "[Clinic Name]",
+                    "[Speciality]"
+                ],
+                "instanceid": "59C26-15DB-D5"
+            }
+        }
+    ],
+    "filters": [
+        {
+            "disabled": false,
+            "isCascading": false,
+            "jaql": {
+                "collapsed": false,
+                "column": "Date",
+                "datasource": {
+                    "address": "LocalHost",
+                    "database": "aMedicalXwAaReferrals",
+                    "fullname": "localhost/Medical_Referrals",
+                    "id": "localhost_aMedicalXwAaReferrals",
+                    "live": false,
+                    "title": "Medical_Referrals"
+                },
+                "datatype": "datetime",
+                "dim": "[DIM_Dates.Date (Calendar)]",
+                "filter": {
+                    "explicit": true,
+                    "members": [
+                        "2016-01-01T00:00:00"
+                    ],
+                    "multiSelection": false,
+                    "userMultiSelect": false
+                },
+                "isDashboardFilter": true,
+                "level": "years",
+                "merged": true,
+                "table": "DIM_Dates",
+                "title": "Years in Date"
+            }
+        },
+        {
+            "disabled": false,
+            "isCascading": true,
+            "levels": [
+                {
+                    "collapsed": true,
+                    "column": "Category",
+                    "datasource": {
+                        "address": "LocalHost",
+                        "database": "aMedicalXwAaReferrals",
+                        "fullname": "localhost/Medical_Referrals",
+                        "id": "localhost_aMedicalXwAaReferrals",
+                        "live": false,
+                        "title": "Medical_Referrals"
+                    },
+                    "datatype": "text",
+                    "dim": "[DIM_Procedure.Category]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "firstday": "mon",
+                    "isDashboardFilter": true,
+                    "locale": "en-us",
+                    "merged": true,
+                    "panel": "scope",
+                    "table": "DIM_Procedure",
+                    "title": "Category"
+                },
+                {
+                    "collapsed": true,
+                    "column": "Procedure",
+                    "datatype": "text",
+                    "dim": "[DIM_Procedure.Procedure]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "isDashboardFilter": true,
+                    "merged": true,
+                    "table": "DIM_Procedure",
+                    "title": "Procedure"
+                }
+            ],
+            "model": {
+                "__store": [
+                    "[DIM_Procedure.Category]",
+                    "[DIM_Procedure.Procedure]"
+                ],
+                "instanceid": "A9C80-F001-05"
+            }
+        },
+        {
+            "disabled": false,
+            "isCascading": true,
+            "levels": [
+                {
+                    "collapsed": true,
+                    "column": "Clinic Name",
+                    "datatype": "text",
+                    "dim": "[Clinic Name]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "isDashboardFilter": true,
+                    "merged": true,
+                    "panel": "scope",
+                    "table": "DIM_Referrals",
+                    "title": "Clinic Name"
+                },
+                {
+                    "collapsed": true,
+                    "column": "Speciality",
+                    "datatype": "text",
+                    "dim": "[Speciality]",
+                    "filter": {
+                        "all": true,
+                        "explicit": false,
+                        "multiSelection": true
+                    },
+                    "isDashboardFilter": true,
+                    "merged": true,
+                    "table": "DIM_Referrals",
+                    "title": "Speciality"
+                }
+            ],
+            "model": {
+                "__store": [
+                    "[Clinic Name]",
+                    "[Speciality]"
+                ],
+                "instanceid": "59C26-15DB-D5"
+            }
+        }
+    ]
+}

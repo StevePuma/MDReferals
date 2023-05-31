@@ -1,0 +1,255 @@
+{
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    },
+    "dashboardid": "5a4cfec4573f08513c0426bf",
+    "datasource": {
+        "address": "LocalHost",
+        "database": "aMedicalXwAaReferrals",
+        "fullname": "localhost/Medical_Referrals",
+        "id": "localhost_aMedicalXwAaReferrals",
+        "live": false,
+        "title": "Medical_Referrals"
+    },
+    "desc": null,
+    "drillToDashboardConfig": {
+        "dashboardIds": [
+        ],
+        "displayDashboardsPane": true,
+        "displayFilterPane": true,
+        "displayHeaderRow": true,
+        "displayToolbarRow": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drilledDashboardDisplayType": 2,
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "excludeFilterDims": [
+        ],
+        "hideDrilledDashboards": true,
+        "includeFilterDims": [
+        ],
+        "modalWindowResize": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "showFolderNameOnMenuSelection": false,
+        "showJTDIcon": true,
+        "volatile": false
+    },
+    "metadata": {
+        "ignore": {
+            "all": false,
+            "dimensions": [
+            ],
+            "ids": [
+            ]
+        },
+        "panels": [
+            {
+                "items": [
+                    {
+                        "format": {
+                        },
+                        "jaql": {
+                            "column": "Speciality",
+                            "datatype": "text",
+                            "dim": "[Speciality]",
+                            "merged": true,
+                            "table": "DIM_Referrals",
+                            "title": "Speciality"
+                        }
+                    }
+                ],
+                "name": "categories"
+            },
+            {
+                "items": [
+                    {
+                        "format": {
+                            "color": {
+                                "color": "#006c6c",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": true,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "jaql": {
+                            "agg": "count",
+                            "column": "Patient ID",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Patient ID]",
+                            "merged": true,
+                            "sort": "desc",
+                            "table": "Fact_Visits",
+                            "title": "# Referred Patients"
+                        }
+                    },
+                    {
+                        "format": {
+                            "color": {
+                                "color": "#00d0d0",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": true,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "jaql": {
+                            "agg": "avg",
+                            "column": "Charge",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Charge]",
+                            "table": "Fact_Visits",
+                            "title": "AVG Charge"
+                        },
+                        "singleSeriesType": "line",
+                        "y2": true
+                    }
+                ],
+                "name": "values"
+            },
+            {
+                "items": [
+                ],
+                "name": "break by"
+            },
+            {
+                "items": [
+                ],
+                "name": "filters"
+            }
+        ]
+    },
+    "oid": "5a567a35e717c84d580bd649",
+    "options": {
+        "autoUpdateOnEveryChange": true,
+        "dashboardFiltersMode": "select",
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+            "max": 50,
+            "min": 0
+        },
+        "selector": true,
+        "triggersDomready": true
+    },
+    "style": {
+        "dataLimits": {
+            "categoriesCapacity": 100000,
+            "seriesCapacity": 50
+        },
+        "legend": {
+            "enabled": true,
+            "position": "bottom"
+        },
+        "narration": {
+            "aggregation": "sum",
+            "display": "above",
+            "enabled": false,
+            "format": "bullets",
+            "labels": [
+                {
+                    "id": "speciality",
+                    "plural": "Speciality",
+                    "singular": "Speciality",
+                    "title": "Speciality"
+                }
+            ],
+            "up_sentiment": "good",
+            "verbosity": "medium"
+        },
+        "navigator": {
+            "enabled": true
+        },
+        "seriesLabels": {
+            "enabled": false,
+            "rotation": 0
+        },
+        "title": {
+            "fontColorEnabled": true,
+            "fontTitleBackgroundEnabled": true,
+            "titleAlign": "center",
+            "titleBackground": "#004d4d",
+            "titleFontColor": "white",
+            "titleMenuEnabled": true
+        },
+        "xAxis": {
+            "enabled": true,
+            "gridLines": true,
+            "isIntervalEnabled": false,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "ticks": true,
+            "title": {
+                "enabled": false
+            },
+            "x2Title": {
+                "enabled": false
+            }
+        },
+        "y2Axis": {
+            "enabled": true,
+            "gridLines": false,
+            "hideMinMax": false,
+            "inactive": false,
+            "isIntervalEnabled": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "logarithmic": false,
+            "templateMainYHasGridLines": true,
+            "ticks": true,
+            "title": {
+                "enabled": false
+            }
+        },
+        "yAxis": {
+            "enabled": true,
+            "gridLines": true,
+            "hideMinMax": false,
+            "inactive": false,
+            "isIntervalEnabled": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "logarithmic": false,
+            "ticks": true,
+            "title": {
+                "enabled": false
+            }
+        }
+    },
+    "subtype": "bar/classic",
+    "title": "# Referred Patients and AVG Charge by Speciality",
+    "type": "chart/bar"
+}

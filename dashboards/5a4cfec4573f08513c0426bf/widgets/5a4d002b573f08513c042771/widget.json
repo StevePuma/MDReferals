@@ -1,0 +1,276 @@
+{
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    },
+    "dashboardid": "5a4cfec4573f08513c0426bf",
+    "datasource": {
+        "address": "LocalHost",
+        "database": "aMedicalXwAaReferrals",
+        "fullname": "localhost/Medical_Referrals",
+        "id": "localhost_aMedicalXwAaReferrals",
+        "live": false,
+        "title": "Medical_Referrals"
+    },
+    "desc": null,
+    "drillToDashboardConfig": {
+        "dashboardIds": [
+        ],
+        "displayDashboardsPane": false,
+        "displayFilterPane": false,
+        "displayHeaderRow": false,
+        "displayToolbarRow": false,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "drillToDashboardNavigateTypePivot": 1,
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drilledDashboardDisplayType": 2,
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "excludeFilterDims": [
+        ],
+        "hideDrilledDashboards": true,
+        "includeFilterDims": [
+        ],
+        "modalWindowResize": true,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "showFolderNameOnMenuSelection": false,
+        "volatile": false
+    },
+    "metadata": {
+        "ignore": {
+            "all": false,
+            "dimensions": [
+            ],
+            "ids": [
+            ]
+        },
+        "panels": [
+            {
+                "items": [
+                    {
+                        "format": {
+                            "color": {
+                                "color": "#09ffff",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": false,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "decimals": 0,
+                                "number": {
+                                    "separated": true
+                                }
+                            }
+                        },
+                        "jaql": {
+                            "context": {
+                                "[0171F-7E5]": {
+                                    "agg": "countduplicates",
+                                    "column": "Visit ID",
+                                    "datatype": "numeric",
+                                    "dim": "[Fact_Visits.Visit ID]",
+                                    "table": "Fact_Visits",
+                                    "title": "# of Visit ID"
+                                },
+                                "[7BF14-EAC]": {
+                                    "column": "Referral ID",
+                                    "datatype": "numeric",
+                                    "dim": "[Fact_Visits.Referral ID]",
+                                    "merged": true,
+                                    "table": "Fact_Visits",
+                                    "title": "Referral ID"
+                                }
+                            },
+                            "formula": "avg([7BF14-EAC],[0171F-7E5])",
+                            "title": "AVG # Referrals per MD",
+                            "type": "measure"
+                        }
+                    }
+                ],
+                "name": "value"
+            },
+            {
+                "items": [
+                    {
+                        "format": {
+                            "mask": {
+                                "decimals": "1",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "percent"
+                            }
+                        },
+                        "jaql": {
+                            "context": {
+                                "[D2FAB-965]": {
+                                    "context": {
+                                        "[25937-D9C]": {
+                                            "column": "Referral ID",
+                                            "datatype": "numeric",
+                                            "dim": "[Fact_Visits.Referral ID]",
+                                            "merged": true,
+                                            "table": "Fact_Visits",
+                                            "title": "Referral ID"
+                                        },
+                                        "[490FC-C3F]": {
+                                            "agg": "countduplicates",
+                                            "column": "Visit ID",
+                                            "datatype": "numeric",
+                                            "dim": "[Fact_Visits.Visit ID]",
+                                            "table": "Fact_Visits",
+                                            "title": "# of Visit ID"
+                                        }
+                                    },
+                                    "formula": "avg([25937-D9C],[490FC-C3F])",
+                                    "title": "Yearly Growth",
+                                    "type": "measure"
+                                }
+                            },
+                            "formula": "GrowthPastYear([D2FAB-965])",
+                            "title": "Yearly Growth",
+                            "type": "measure"
+                        },
+                        "originalJaql": {
+                            "context": {
+                                "[25937-D9C]": {
+                                    "column": "Referral ID",
+                                    "datatype": "numeric",
+                                    "dim": "[Fact_Visits.Referral ID]",
+                                    "merged": true,
+                                    "table": "Fact_Visits",
+                                    "title": "Referral ID"
+                                },
+                                "[490FC-C3F]": {
+                                    "agg": "countduplicates",
+                                    "column": "Visit ID",
+                                    "datatype": "numeric",
+                                    "dim": "[Fact_Visits.Visit ID]",
+                                    "table": "Fact_Visits",
+                                    "title": "# of Visit ID"
+                                }
+                            },
+                            "formula": "avg([25937-D9C],[490FC-C3F])",
+                            "title": "Yearly Growth",
+                            "type": "measure"
+                        },
+                        "quickFunction": "GrowthPastYear"
+                    }
+                ],
+                "name": "secondary"
+            },
+            {
+                "items": [
+                ],
+                "name": "min"
+            },
+            {
+                "items": [
+                ],
+                "name": "max"
+            },
+            {
+                "items": [
+                ],
+                "name": "filters"
+            }
+        ]
+    },
+    "oid": "5a4d002b573f08513c042771",
+    "options": {
+        "autoUpdateOnEveryChange": true,
+        "dashboardFiltersMode": "filter",
+        "disallowSelector": true,
+        "selector": false,
+        "supportsHierarchies": false,
+        "triggersDomready": true
+    },
+    "style": {
+        "components": {
+            "icon": {
+                "enabled": true,
+                "inactive": true
+            },
+            "secondaryTitle": {
+                "enabled": true,
+                "inactive": false
+            },
+            "title": {
+                "enabled": false,
+                "inactive": false
+            }
+        },
+        "indicator/gauge": {
+            "components": {
+                "labels": {
+                    "enabled": true,
+                    "inactive": false
+                },
+                "secondaryTitle": {
+                    "enabled": true,
+                    "inactive": true
+                },
+                "ticks": {
+                    "enabled": true,
+                    "inactive": false
+                },
+                "title": {
+                    "enabled": true,
+                    "inactive": false
+                }
+            },
+            "skin": "1",
+            "subtype": "round"
+        },
+        "indicator/numeric": {
+            "components": {
+                "icon": {
+                    "enabled": true,
+                    "inactive": false
+                },
+                "secondaryTitle": {
+                    "enabled": true,
+                    "inactive": true
+                },
+                "title": {
+                    "enabled": true,
+                    "inactive": false
+                }
+            },
+            "skin": "vertical",
+            "subtype": "simple"
+        },
+        "narration": {
+            "aggregation": "sum",
+            "display": "above",
+            "enabled": false,
+            "format": "bullets",
+            "labels": [
+            ],
+            "up_sentiment": "good",
+            "verbosity": "medium"
+        },
+        "skin": "vertical",
+        "subtype": "simple",
+        "title": {
+            "fontColorEnabled": true,
+            "fontTitleBackgroundEnabled": true,
+            "titleAlign": "center",
+            "titleBackground": "#004d4d",
+            "titleFontColor": "white",
+            "titleMenuEnabled": true
+        }
+    },
+    "subtype": "indicator/numeric",
+    "title": "AVG # Referrals per MD",
+    "type": "indicator"
+}

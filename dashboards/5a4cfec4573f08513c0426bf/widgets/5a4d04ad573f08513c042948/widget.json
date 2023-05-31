@@ -1,0 +1,304 @@
+{
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    },
+    "dashboardid": "5a4cfec4573f08513c0426bf",
+    "datasource": {
+        "address": "LocalHost",
+        "database": "aMedicalXwAaReferrals",
+        "fullname": "localhost/Medical_Referrals",
+        "id": "localhost_aMedicalXwAaReferrals",
+        "live": false,
+        "title": "Medical_Referrals"
+    },
+    "desc": null,
+    "drillToDashboardConfig": {
+        "dashboardIds": [
+        ],
+        "displayDashboardsPane": true,
+        "displayFilterPane": true,
+        "displayHeaderRow": true,
+        "displayToolbarRow": true,
+        "drillToDashboardByName": false,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drilledDashboardDisplayType": 2,
+        "drilledDashboardPrefix": "_drill",
+        "drilledDashboardsFolderPrefix": "",
+        "excludeFilterDims": [
+        ],
+        "forceZeroInsteadNull": false,
+        "hideDrilledDashboards": true,
+        "hideSharedDashboardsForNonOwner": true,
+        "includeFilterDims": [
+        ],
+        "mergeTargetDashboardFilters": false,
+        "modalWindowResize": false,
+        "resetDashFiltersAfterJTD": false,
+        "sameCubeRestriction": true,
+        "sendPieChartMeasureFiltersOnClick": true,
+        "showFolderNameOnMenuSelection": false,
+        "showJTDIcon": true,
+        "volatile": false
+    },
+    "metadata": {
+        "ignore": {
+            "all": false,
+            "dimensions": [
+            ],
+            "ids": [
+            ]
+        },
+        "panels": [
+            {
+                "items": [
+                    {
+                        "format": {
+                        },
+                        "instanceid": "D58B0-4E4D-CC",
+                        "jaql": {
+                            "column": "Category",
+                            "datatype": "text",
+                            "dim": "[DIM_Procedure.Category]",
+                            "merged": true,
+                            "table": "DIM_Procedure",
+                            "title": "Category"
+                        }
+                    }
+                ],
+                "name": "categories"
+            },
+            {
+                "items": [
+                    {
+                        "format": {
+                            "color": {
+                                "color": "#09ffff",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": true,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "instanceid": "0054D-ED19-C2",
+                        "jaql": {
+                            "agg": "countduplicates",
+                            "column": "Visit ID",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Visit ID]",
+                            "table": "Fact_Visits",
+                            "title": "# of Referrals"
+                        }
+                    },
+                    {
+                        "format": {
+                            "color": {
+                                "color": "#00d0d0",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": true,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "instanceid": "CA4F8-306A-15",
+                        "jaql": {
+                            "agg": "avg",
+                            "column": "Charge",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Charge]",
+                            "table": "Fact_Visits",
+                            "title": "AVG Charge per MD"
+                        },
+                        "singleSeriesType": "column",
+                        "y2": false
+                    },
+                    {
+                        "format": {
+                            "color": {
+                                "color": "#007a7a",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": true,
+                                    "k": true,
+                                    "m": true,
+                                    "t": true
+                                },
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "instanceid": "2AC2B-5719-C3",
+                        "jaql": {
+                            "agg": "countduplicates",
+                            "column": "Visit ID",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Visit ID]",
+                            "table": "Fact_Visits",
+                            "title": "# Referrals per MD"
+                        },
+                        "singleSeriesType": "line",
+                        "y2": true
+                    }
+                ],
+                "name": "values"
+            },
+            {
+                "items": [
+                ],
+                "name": "break by"
+            },
+            {
+                "items": [
+                ],
+                "name": "filters"
+            }
+        ],
+        "usedFormulasMapping": {
+        }
+    },
+    "oid": "5a4d04ad573f08513c042948",
+    "options": {
+        "autoUpdateOnEveryChange": true,
+        "dashboardFiltersMode": "select",
+        "drillToAnywhere": true,
+        "previousScrollerLocation": {
+            "max": null,
+            "min": null
+        },
+        "selector": true,
+        "selectorLocked": false,
+        "triggersDomready": true
+    },
+    "style": {
+        "dataLimits": {
+            "categoriesCapacity": 100000,
+            "seriesCapacity": 50
+        },
+        "legend": {
+            "enabled": true,
+            "position": "bottom"
+        },
+        "narration": {
+            "aggregation": "sum",
+            "display": "above",
+            "enabled": false,
+            "format": "bullets",
+            "labels": [
+                {
+                    "id": "category",
+                    "plural": "Category",
+                    "singular": "Category",
+                    "title": "Category"
+                }
+            ],
+            "up_sentiment": "good",
+            "verbosity": "medium"
+        },
+        "navigator": {
+            "enabled": true
+        },
+        "seriesLabels": {
+            "enabled": true,
+            "labels": {
+                "enabled": false,
+                "types": {
+                    "count": false,
+                    "percentage": false,
+                    "relative": false,
+                    "totals": false
+                }
+            },
+            "rotation": 0
+        },
+        "title": {
+            "fontColorEnabled": true,
+            "fontSizeEnabled": false,
+            "fontTitleBackgroundEnabled": true,
+            "titleAlign": "center",
+            "titleBackground": "#004d4d",
+            "titleFontColor": "white",
+            "titleMenuEnabled": true
+        },
+        "xAxis": {
+            "enabled": true,
+            "gridLines": true,
+            "isIntervalEnabled": false,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "ticks": true,
+            "title": {
+                "enabled": false
+            },
+            "x2Title": {
+                "enabled": false
+            }
+        },
+        "y2Axis": {
+            "enabled": true,
+            "gridLines": false,
+            "hideMinMax": false,
+            "inactive": false,
+            "isIntervalEnabled": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "logarithmic": false,
+            "templateMainYHasGridLines": true,
+            "ticks": true,
+            "title": {
+                "enabled": false
+            }
+        },
+        "yAxis": {
+            "enabled": true,
+            "gridLines": true,
+            "hideMinMax": false,
+            "inactive": false,
+            "isIntervalEnabled": true,
+            "labels": {
+                "enabled": true,
+                "rotation": 0
+            },
+            "logarithmic": false,
+            "ticks": true,
+            "title": {
+                "enabled": false
+            }
+        }
+    },
+    "subtype": "column/classic",
+    "title": "# Referring MDs, AVG Charge and # Referrals by Procedure Category",
+    "type": "chart/column"
+}
