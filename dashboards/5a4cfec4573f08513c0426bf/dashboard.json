@@ -1,0 +1,67 @@
+{
+    "allowChangeSubscription": false,
+    "dataExploration": true,
+    "datasource": {
+        "address": "LocalHost",
+        "database": "aMedicalXwAaReferrals",
+        "fullname": "localhost/Medical_Referrals",
+        "id": "localhost_aMedicalXwAaReferrals",
+        "live": false,
+        "title": "Medical_Referrals"
+    },
+    "desc": "",
+    "filters": "./filters.json",
+    "hierarchies": [
+    ],
+    "layout": "./layout.json",
+    "oid": "5a4cfec4573f08513c0426bf",
+    "settings": {
+        "autoUpdateOnFiltersChange": true
+    },
+    "style": {
+        "name": "vivid",
+        "palette": {
+            "_id": "5a5682f9e717c84d580bd7c2",
+            "colors": [
+                "#00ffff",
+                "#00cccc",
+                "#00b3b3",
+                "#008080"
+            ],
+            "isDefault": false,
+            "name": "medical"
+        }
+    },
+    "subscription": {
+        "active": false,
+        "context": {
+            "dashboardid": "5a4cfec4573f08513c0426bf"
+        },
+        "emailSettings": {
+            "isEmail": true,
+            "isPdf": false
+        },
+        "executionPerDay": 1,
+        "isDataChange": true,
+        "reportType": {
+            "inline": true
+        },
+        "schedule": "* * * * * *",
+        "subscribe": false,
+        "timezone": 300,
+        "type": "onUpdate",
+        "tzName": "America/New_York"
+    },
+    "title": "MD Referrals",
+    "widgets": [
+        "./widgets/5a4cfff6573f08513c042753/widget.json",
+        "./widgets/5a4d002b573f08513c042771/widget.json",
+        "./widgets/5a4d0355573f08513c0428da/widget.json",
+        "./widgets/5a4d04ad573f08513c042948/widget.json",
+        "./widgets/5a56755be717c84d580bd513/widget.json",
+        "./widgets/5a56775fe717c84d580bd600/widget.json",
+        "./widgets/5a567a35e717c84d580bd649/widget.json",
+        "./widgets/5a567a6ee717c84d580bd65c/widget.json",
+        "./widgets/5a57d564558eac59749c246d/widget.json"
+    ]
+}

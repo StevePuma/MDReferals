@@ -1,0 +1,154 @@
+{
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    },
+    "dashboardid": "5a4cfec4573f08513c0426bf",
+    "datasource": {
+        "address": "LocalHost",
+        "database": "aMedicalXwAaReferrals",
+        "fullname": "localhost/Medical_Referrals",
+        "id": "localhost_aMedicalXwAaReferrals",
+        "live": false,
+        "title": "Medical_Referrals"
+    },
+    "desc": null,
+    "lastSelected": "AVG Charge",
+    "metadata": {
+        "ignore": {
+            "all": false,
+            "dimensions": [
+            ],
+            "ids": [
+            ]
+        },
+        "panels": [
+            {
+                "items": [
+                ],
+                "name": "rows"
+            },
+            {
+                "items": [
+                    {
+                        "format": {
+                            "mask": {
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "instanceid": "426C3-46C7-55",
+                        "jaql": {
+                            "agg": "countduplicates",
+                            "column": "Visit ID",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Visit ID]",
+                            "table": "Fact_Visits",
+                            "title": "# of Referrals"
+                        }
+                    },
+                    {
+                        "format": {
+                            "mask": {
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "instanceid": "E476B-3646-24",
+                        "jaql": {
+                            "agg": "count",
+                            "column": "Patient ID",
+                            "datatype": "numeric",
+                            "dim": "[DIM_Patients.Patient ID]",
+                            "merged": true,
+                            "table": "DIM_Patients",
+                            "title": "# of Patients"
+                        }
+                    },
+                    {
+                        "format": {
+                            "mask": {
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "number"
+                            }
+                        },
+                        "instanceid": "9F0A6-84B4-DD",
+                        "jaql": {
+                            "agg": "count",
+                            "column": "ReferralID",
+                            "datatype": "numeric",
+                            "dim": "[ReferralID]",
+                            "merged": true,
+                            "table": "DIM_Referrals",
+                            "title": "# of Referring MDs"
+                        }
+                    },
+                    {
+                        "format": {
+                            "mask": {
+                                "abbreviations": {
+                                    "b": false,
+                                    "k": false,
+                                    "m": false,
+                                    "t": false
+                                },
+                                "currency": {
+                                    "position": "pre",
+                                    "symbol": "$"
+                                },
+                                "decimals": "auto"
+                            }
+                        },
+                        "instanceid": "4D47C-252A-1F",
+                        "jaql": {
+                            "agg": "avg",
+                            "column": "Charge",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Charge]",
+                            "table": "Fact_Visits",
+                            "title": "AVG Charge"
+                        }
+                    }
+                ],
+                "name": "values"
+            },
+            {
+                "items": [
+                ],
+                "name": "filters"
+            }
+        ],
+        "usedFormulasMapping": {
+        }
+    },
+    "oid": "5a57d564558eac59749c246d",
+    "options": {
+        "autoUpdateOnEveryChange": true,
+        "dashboardFiltersMode": "filter",
+        "selector": false
+    },
+    "script": "./script.js",
+    "style": {
+        "narration": {
+            "aggregation": "sum",
+            "display": "above",
+            "enabled": false,
+            "format": "bullets",
+            "labels": [
+            ],
+            "up_sentiment": "good",
+            "verbosity": "medium"
+        }
+    },
+    "subtype": "DimensionChanger",
+    "title": "",
+    "type": "DimensionChanger"
+}

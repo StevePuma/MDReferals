@@ -1,0 +1,424 @@
+{
+    "_dataSourcePermission": "owner",
+    "_toDisableOptionsList": {
+        "widgets": {
+            "duplicate": false
+        }
+    },
+    "dashboardid": "5a4cfec4573f08513c0426bf",
+    "datasource": {
+        "address": "LocalHost",
+        "database": "aMedicalXwAaReferrals",
+        "fullname": "localhost/Medical_Referrals",
+        "id": "localhost_aMedicalXwAaReferrals",
+        "live": false,
+        "title": "Medical_Referrals"
+    },
+    "desc": null,
+    "drillToDashboardConfig": {
+        "dashboardIds": [
+        ],
+        "displayDashboardsPane": true,
+        "displayFilterPane": true,
+        "displayHeaderRow": true,
+        "displayToolbarRow": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drilledDashboardDisplayType": 2,
+        "drilledDashboardPrefix": "_drill",
+        "excludeFilterDims": [
+        ],
+        "hideDrilledDashboards": true,
+        "includeFilterDims": [
+        ],
+        "resetDashFiltersAfterJTD": false,
+        "showFolderNameOnMenuSelection": false,
+        "volatile": false
+    },
+    "metadata": {
+        "ignore": {
+            "all": false,
+            "dimensions": [
+            ],
+            "ids": [
+            ]
+        },
+        "panels": [
+            {
+                "items": [
+                    {
+                        "field": {
+                            "id": "[Clinic Name]",
+                            "index": 0
+                        },
+                        "format": {
+                            "width": 203
+                        },
+                        "jaql": {
+                            "column": "Clinic Name",
+                            "datatype": "text",
+                            "dim": "[Clinic Name]",
+                            "merged": true,
+                            "table": "DIM_Referrals",
+                            "title": "Clinic Name"
+                        }
+                    },
+                    {
+                        "field": {
+                            "id": "[Speciality]",
+                            "index": 1
+                        },
+                        "jaql": {
+                            "column": "Speciality",
+                            "datatype": "text",
+                            "dim": "[Speciality]",
+                            "merged": true,
+                            "table": "DIM_Referrals",
+                            "title": "Speciality"
+                        }
+                    },
+                    {
+                        "field": {
+                            "id": "[Full Name]",
+                            "index": 2
+                        },
+                        "jaql": {
+                            "column": "Full Name",
+                            "datatype": "text",
+                            "dim": "[Full Name]",
+                            "merged": true,
+                            "table": "DIM_Referrals",
+                            "title": "Full Name"
+                        }
+                    }
+                ],
+                "name": "rows"
+            },
+            {
+                "items": [
+                    {
+                        "field": {
+                            "id": "[DIM_Patients.Patient ID]_count",
+                            "index": 3
+                        },
+                        "format": {
+                            "color": {
+                                "color": "transparent",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "b": true,
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "t": true,
+                                "type": "number"
+                            }
+                        },
+                        "jaql": {
+                            "agg": "count",
+                            "column": "Patient ID",
+                            "datatype": "numeric",
+                            "dim": "[DIM_Patients.Patient ID]",
+                            "merged": true,
+                            "sort": "asc",
+                            "sortDetails": {
+                                "dir": "asc",
+                                "field": 3,
+                                "initialized": true,
+                                "measurePath": null,
+                                "sortingLastDimension": "count"
+                            },
+                            "table": "DIM_Patients",
+                            "title": "# of Referred Patients"
+                        }
+                    },
+                    {
+                        "field": {
+                            "id": "GrowthPastYear([C11C0-262])",
+                            "index": 4
+                        },
+                        "format": {
+                            "color": {
+                                "color": "transparent",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "decimals": "2",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "percent"
+                            }
+                        },
+                        "jaql": {
+                            "context": {
+                                "[C11C0-262]": {
+                                    "context": {
+                                        "[C0113-ECB]": {
+                                            "column": "Patient ID",
+                                            "datatype": "numeric",
+                                            "dim": "[DIM_Patients.Patient ID]",
+                                            "merged": true,
+                                            "table": "DIM_Patients",
+                                            "title": "Patient ID"
+                                        }
+                                    },
+                                    "formula": "count([C0113-ECB])",
+                                    "title": "count([Patient ID])",
+                                    "type": "measure"
+                                }
+                            },
+                            "formula": "GrowthPastYear([C11C0-262])",
+                            "title": "Growth # of Referred Patients",
+                            "type": "measure"
+                        },
+                        "originalJaql": {
+                            "context": {
+                                "[C0113-ECB]": {
+                                    "column": "Patient ID",
+                                    "datatype": "numeric",
+                                    "dim": "[DIM_Patients.Patient ID]",
+                                    "merged": true,
+                                    "table": "DIM_Patients",
+                                    "title": "Patient ID"
+                                }
+                            },
+                            "formula": "count([C0113-ECB])",
+                            "title": "count([Patient ID])",
+                            "type": "measure"
+                        },
+                        "quickFunction": "GrowthPastYear"
+                    },
+                    {
+                        "field": {
+                            "id": "[DIM_Procedure.Procedure]_count",
+                            "index": 5
+                        },
+                        "format": {
+                            "color": {
+                                "color": "transparent",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "b": true,
+                                "decimals": "auto",
+                                "isdefault": true,
+                                "separated": true,
+                                "t": true,
+                                "type": "number"
+                            }
+                        },
+                        "jaql": {
+                            "agg": "count",
+                            "column": "Procedure",
+                            "datatype": "text",
+                            "dim": "[DIM_Procedure.Procedure]",
+                            "merged": true,
+                            "table": "DIM_Procedure",
+                            "title": "# of Referred Procedures"
+                        }
+                    },
+                    {
+                        "field": {
+                            "id": "GrowthPastYear([A3282-396])",
+                            "index": 6
+                        },
+                        "format": {
+                            "color": {
+                                "color": "transparent",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "decimals": "2",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "percent"
+                            }
+                        },
+                        "jaql": {
+                            "context": {
+                                "[A3282-396]": {
+                                    "agg": "count",
+                                    "column": "Procedure",
+                                    "datatype": "text",
+                                    "dim": "[DIM_Procedure.Procedure]",
+                                    "merged": true,
+                                    "table": "DIM_Procedure",
+                                    "title": "# of unique Procedure"
+                                }
+                            },
+                            "formula": "GrowthPastYear([A3282-396])",
+                            "title": "Growth # of Referred Procedures",
+                            "type": "measure"
+                        },
+                        "originalJaql": {
+                            "context": {
+                                "[7ADAE-5F2]": {
+                                    "column": "Patient ID",
+                                    "datatype": "numeric",
+                                    "dim": "[DIM_Patients.Patient ID]",
+                                    "merged": true,
+                                    "table": "DIM_Patients",
+                                    "title": "Patient ID"
+                                }
+                            },
+                            "formula": "count([7ADAE-5F2])",
+                            "title": "count([Patient ID])1",
+                            "type": "measure"
+                        },
+                        "quickFunction": "GrowthPastYear"
+                    },
+                    {
+                        "field": {
+                            "id": "[Fact_Visits.Charge]_sum",
+                            "index": 7
+                        },
+                        "format": {
+                            "color": {
+                                "color": "transparent",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "abbreviations": {
+                                    "b": false,
+                                    "k": false,
+                                    "m": false,
+                                    "t": false
+                                },
+                                "currency": {
+                                    "position": "pre",
+                                    "symbol": "$"
+                                },
+                                "decimals": "auto"
+                            }
+                        },
+                        "jaql": {
+                            "agg": "sum",
+                            "column": "Charge",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Charge]",
+                            "table": "Fact_Visits",
+                            "title": "Total Charge"
+                        }
+                    },
+                    {
+                        "field": {
+                            "id": "GrowthPastYear([C106E-0CB])",
+                            "index": 8
+                        },
+                        "format": {
+                            "color": {
+                                "color": "transparent",
+                                "type": "color"
+                            },
+                            "mask": {
+                                "decimals": "2",
+                                "isdefault": true,
+                                "separated": true,
+                                "type": "percent"
+                            }
+                        },
+                        "jaql": {
+                            "context": {
+                                "[C106E-0CB]": {
+                                    "agg": "sum",
+                                    "column": "Charge",
+                                    "datatype": "numeric",
+                                    "dim": "[Fact_Visits.Charge]",
+                                    "table": "Fact_Visits",
+                                    "title": "Total Charge"
+                                }
+                            },
+                            "formula": "GrowthPastYear([C106E-0CB])",
+                            "title": "Growth Charge",
+                            "type": "measure"
+                        },
+                        "originalJaql": {
+                            "agg": "sum",
+                            "column": "Charge",
+                            "datatype": "numeric",
+                            "dim": "[Fact_Visits.Charge]",
+                            "table": "Fact_Visits",
+                            "title": "Total Charge"
+                        },
+                        "quickFunction": "GrowthPastYear"
+                    }
+                ],
+                "name": "values"
+            },
+            {
+                "items": [
+                ],
+                "name": "columns"
+            },
+            {
+                "items": [
+                ],
+                "name": "filters"
+            }
+        ]
+    },
+    "oid": "5a56775fe717c84d580bd600",
+    "options": {
+        "autoUpdateOnEveryChange": true,
+        "dashboardFiltersMode": "filter",
+        "drillToAnywhere": true,
+        "selector": false,
+        "triggersDomready": true
+    },
+    "script_old": null,
+    "style": {
+        "automaticHeight": false,
+        "colors": {
+            "columns": false,
+            "headers": false,
+            "members": false,
+            "rows": true,
+            "totals": false
+        },
+        "narration": {
+            "aggregation": "sum",
+            "display": "above",
+            "enabled": false,
+            "format": "bullets",
+            "labels": [
+                {
+                    "id": "clinic_name",
+                    "plural": "Clinic Name",
+                    "singular": "Clinic Name",
+                    "title": "Clinic Name"
+                },
+                {
+                    "id": "speciality",
+                    "plural": "Speciality",
+                    "singular": "Speciality",
+                    "title": "Speciality"
+                },
+                {
+                    "id": "full_name",
+                    "plural": "Full Name",
+                    "singular": "Full Name",
+                    "title": "Full Name"
+                }
+            ],
+            "up_sentiment": "good",
+            "verbosity": "medium"
+        },
+        "pageSize": 25,
+        "title": {
+            "fontColorEnabled": true,
+            "fontTitleBackgroundEnabled": true,
+            "titleAlign": "center",
+            "titleBackground": "#004d4d",
+            "titleFontColor": "white",
+            "titleMenuEnabled": true
+        }
+    },
+    "subtype": "pivot",
+    "title": "# Patients, # Proceduers and Charge per MD",
+    "type": "pivot"
+}
